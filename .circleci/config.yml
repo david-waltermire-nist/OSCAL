@@ -172,6 +172,7 @@ commands:
       - run:
           name: Check if job should be skipped
           command: |
+            circleci step halt
             if [[ -f "$OSCAL_BUILD_DIR/.skipbuild" ]]; then
               echo "Skipping job."
               circleci step halt
